@@ -16,19 +16,19 @@
 ---
 
 ## 文件结构
+```text
 east_china_sea_qc_dl_mvp/
-│
-├─ data/ # 示例观测数据
-│ └─ sample_data.csv
-├─ agents/ # 四个功能 Agent
-│ ├─ data_cleaning.py
-│ ├─ anomaly_detection.py
-│ ├─ data_fusion_correction.py
-│ └─ report_visualization.py
-├─ main.py # 主程序
-├─ README.md # 项目说明
-└─ .gitignore # Git 忽略文件
-
+├── data/ # 示例观测数据
+│   └── sample_data.csv
+├── agents/ # 四个功能 Agent
+│   ├── data_cleaning.py
+│   ├── anomaly_detection.py
+│   ├── data_fusion_correction.py
+│   └── report_visualization.py
+├── main.py # 主程序
+├── README.md # 项目说明
+└── .gitignore # Git 忽略文件
+```
 
 ---
 
@@ -42,12 +42,14 @@ east_china_sea_qc_dl_mvp/
 ---
 
 ## 使用方法
-
 ### 安装依赖
 ```bash
 pip install pandas numpy matplotlib tensorflow scikit-learn
+```
 运行项目
+```
 python main.py
+```
 输出
 控制台打印：质控报告，包括总记录数、检测到的异常数
 CSV 文件：data/qc_corrected_data.csv（质控后的观测数据）
@@ -55,14 +57,16 @@ CSV 文件：data/qc_corrected_data.csv（质控后的观测数据）
 使用示例
 
 运行完成后控制台输出：
-
+```
 === 质控报告 ===
 total_records: 1000
 dl_anomalies_detected: 45
-
+```
 同时生成 qc_corrected_data.csv 和 anomaly_plot.png，方便直接用于后续分析或模型输入。
 
-扩展与改进
+---
+
+## 扩展与改进
 替换 LSTM Autoencoder 为 GRU 或 Transformer 模型，提高异常检测精度
 添加更多观测参数，如溶解氧、浊度等
 支持批量处理多浮标数据文件
